@@ -8,11 +8,14 @@ module.exports = {
         filename: 'bundle.js'
     },
     resolve: {
-        extensions: ['.ts']
+        extensions: ['.ts', '.js', '.jsx','.css']
     },
     module: {
+        rules:[
+            { test: /\.css$/, use:['style-loader','css-loader']}
+        ],
         loaders: [
-            { test: /.ts$/, loader: 'awesome-typescript-loader' }
+            { test: /.ts$/, loader: 'awesome-typescript-loader' },
         ]
     }
 };
