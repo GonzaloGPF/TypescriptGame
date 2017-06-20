@@ -1,6 +1,5 @@
 ///<reference path='../../node_modules/@types/createjs/index.d.ts' />
 
-// import * as createjs from 'createjs-module';
 require('yuki-createjs');
 import GameData from "./GameData";
 import { GameScene } from "./scenes/GameScene";
@@ -19,11 +18,11 @@ export class Main {
     currentScene: Scene;
     currentGameStateFunction: any = null;
 
-    constructor(){
+    constructor() {
 
         console.log('Game Main Class!');
 
-        let canvas = <HTMLCanvasElement> document.getElementById('canvas');
+        let canvas = <HTMLCanvasElement>document.getElementById('canvas');
         this.canvas = canvas;
         this.screen_width = canvas.width;
         this.screen_height = canvas.height;
@@ -36,7 +35,7 @@ export class Main {
         this.changeState(GameData.States.Menu);
     }
 
-    changeState(state: string){
+    changeState(state: string) {
         let states = GameData.States;
         switch (state) {
             case states.Running:
@@ -54,46 +53,46 @@ export class Main {
         }
     }
 
-    onStateEvent(eventObj: Object){
+    onStateEvent(eventObj: Object) {
         console.log(eventObj)
         // this.changeState(obj.state);
     }
 
-    gameStateMainMenu(tickEvent: createjs.Event){
+    gameStateMainMenu(tickEvent: createjs.Event) {
         let scene = new MenuScene();
-        scene.on(GameData.States.Game, this.onStateEvent, this, true, {state: GameData.States.Game});
+        scene.on(GameData.States.Game, this.onStateEvent, this, true, { state: GameData.States.Game });
         this.stage.addChild(scene);
         this.disposeCurrentScene();
         this.currentScene = scene;
         this.changeState(GameData.States.Running);
     }
 
-    gameStateGame(tickEvent: createjs.Event){
+    gameStateGame(tickEvent: createjs.Event) {
         let scene = new GameScene();
-        scene.on(GameData.States.GameOver, this.onStateEvent, this, true, {state: GameData.States.GameOver});
+        scene.on(GameData.States.GameOver, this.onStateEvent, this, true, { state: GameData.States.GameOver });
         this.stage.addChild(scene);
         this.disposeCurrentScene();
         this.currentScene = scene;
         this.changeState(GameData.States.Running);
     }
 
-    gameStateRunning(tickEvent: createjs.Event){
+    gameStateRunning(tickEvent: createjs.Event) {
         if (this.currentScene.run) {
             this.currentScene.run(tickEvent);
         }
     }
 
-    disposeCurrentScene(){
+    disposeCurrentScene() {
         if (this.currentScene != null) {
             this.stage.removeChild(this.currentScene);
-            if(this.currentScene.dispose){
+            if (this.currentScene.dispose) {
                 this.currentScene.dispose();
             }
             // this.currentScene = null;
         }
     }
 
-    onTick(event: createjs.Event){
+    onTick(event: createjs.Event) {
         if (this.currentGameStateFunction != null) {
             this.currentGameStateFunction(event);
         }

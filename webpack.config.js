@@ -11,8 +11,15 @@ module.exports = {
         extensions: ['.ts']
     },
     module: {
-        loaders: [
-            { test: /.ts$/, loader: 'awesome-typescript-loader' }
+        rules: [ // or loaders
+            { test: /.ts$/, loader: 'awesome-typescript-loader', "exclude": ["node_modules"] }
         ]
-    }
+    },
+    plugins: []
 };
+
+if (process.env.ENV === 'prod') {
+    module.exports.plugins = [
+        new webpack.optimize.UglifyJsPlugin()
+    ]
+}

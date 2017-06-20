@@ -1,4 +1,8 @@
-export abstract class Scene extends createjs.Container{
+export abstract class Scene extends createjs.Container {
     abstract run(tickEvent?: createjs.Event): void;
-    abstract dispose?() : void;
+    abstract dispose?(): void;
+
+    constructor() {
+        super();
+    }
 }
