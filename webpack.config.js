@@ -15,6 +15,10 @@ module.exports = {
         rules: [ // or loaders
             { test: /.ts$/, loader: 'awesome-typescript-loader', "exclude": ["node_modules"] },
             { test: /\.css$/, use:['style-loader','css-loader']}
+        ],
+
+        loaders: [
+            { test: /.ts$/, loader: 'awesome-typescript-loader' }
         ]
     },
     plugins: []
