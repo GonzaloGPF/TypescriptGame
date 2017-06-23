@@ -4,8 +4,9 @@
   "description": "Un juego creado con TypeScript",
   "main": "main.js",
   "scripts": {
-    "build": "webpack",
-    "watch": "webpack --watch",
+    "dev": "cross-env webpack",
+    "prod": "cross-env webpack",
+    "watch": "cross-env webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -30,6 +31,7 @@
     "webpack": "^2.6.1"
   },
   "dependencies": {
+    "cross-env": "^5.0.1",
     "yuki-createjs": "0.0.3"
   }
 }
