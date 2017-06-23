@@ -4,14 +4,8 @@
   "description": "Un juego creado con TypeScript",
   "main": "main.js",
   "scripts": {
-<<<<<<< HEAD
-    "dev": "webpack",
-    "prod": "ENV=prod webpack",
-    "watch": "webpack -- --watch",
-=======
     "build": "webpack",
     "watch": "webpack --watch",
->>>>>>> Sass
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
