@@ -11,16 +11,11 @@ module.exports = {
         extensions: ['.ts', '.js', '.jsx','.css']
     },
     module: {
-<<<<<<< HEAD
-        rules: [ // or loaders
-            { test: /.ts$/, loader: 'awesome-typescript-loader', "exclude": ["node_modules"] }
-=======
         rules:[
             { test: /\.css$/, use:['style-loader','css-loader']}
         ],
         loaders: [
             { test: /.ts$/, loader: 'awesome-typescript-loader' },
->>>>>>> Sass
         ]
     },
     plugins: []
