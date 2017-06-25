@@ -1,0 +1,23 @@
+@import './scss/variables.scss';
+
+h1{
+  text-align: center;
+}
+
+.logo{
+  background: url('images/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 12px auto;
+  width: 100px;
+  height: 100px;
+}
+
+body {
+  background: $primary-1;
+}
+
+canvas {
+  display: block;
+  margin: 10px auto;
+}

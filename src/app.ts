@@ -1,5 +1,3 @@
-import { Main } from "./game/Main";
+import { Game } from "./ts/game/Game";
 
-import "./game/css/mainComponent.css";
-
-let game = new Main();
+let game = new Game();

@@ -1,4 +1,4 @@
-///<reference path='../../node_modules/@types/createjs/index.d.ts' />
+///<reference path='../../../node_modules/@types/createjs/index.d.ts' />
 
 require('yuki-createjs');
 import GameData from "./GameData";
@@ -6,7 +6,7 @@ import { GameScene } from "./scenes/GameScene";
 import { MenuScene } from "./scenes/MenuScene";
 import { Scene } from "./scenes/Scene";
 
-export class Main {
+export class Game {
 
     canvas: HTMLCanvasElement | null;
 
